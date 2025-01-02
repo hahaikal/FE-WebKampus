@@ -1,0 +1,123 @@
+body {
+    background-image: url(../src/assets/image/WhatsApp\ Image\ 2024-12-01\ at\ 12.48.31_e52880ea.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+}
+
+/* LANDING PAGE */
+.content {
+    max-width: 650px;
+    margin: 60px 100px;
+}
+
+.content .info h2 {
+    color: #226a80;
+    font-size: 55px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 60px;
+    margin-bottom: 30px;
+}
+
+.content .info h2 span {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.content .info-btn {
+    color: #fff;
+    background:#226a80 ;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+    transition-property:background ;
+}
+
+.content .info-btn:hover {
+    background: #0c4f60;
+}
+
+.media-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.media-icons a {
+    position: relative;
+    color: #111;
+    font-size: 25px;
+    transition: 0.3s;
+    transition-property: transform;
+}
+/* END LANDING PAGE */
+  
+/* LOGIN SEBAGAI */
+.icon {
+    font-size: 100px;
+    text-align: center;
+    margin-bottom: -40px;
+}
+
+.wrapper {
+    width: 380px;
+    background: transparent;
+    border: 2px solid rgba(255 , 255, 255, .2);
+    backdrop-filter: blur(20px);
+    color: #fff;
+    border-radius: 10px; 
+    padding: 30px 40px;
+    height: 450px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+h1 p{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.option a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid rgba(255 , 255, 255, .2);
+    border-radius: 18px;
+    width: 180px;
+    margin-top: 20px;
+    padding: 7px;
+    align-items: center;
+    font-weight: 400;
+    font-size: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.option{
+    text-align: center;
+    
+}
+
+
+.option a:hover{
+    background: #ffffff;
+	color: #000000;
+	transition: 0.3s;
+}
+
+/* END LOGIN SEBAGAI */

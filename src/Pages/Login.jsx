@@ -1,6 +1,6 @@
-function Login () {
+export default function Login () {
     return (
-    <div className="wrapper">
+    <div className="wrapper  d-flex justify-content-center align-items-center vh-100">
         <form action="">
             <div className="icon"><i className='bx bxs-user' ></i></div>
             <h1>Login
@@ -8,12 +8,10 @@ function Login () {
             </h1>
 
             <div className="option">
-                <a href="../Login-Form-Dosen/index.html">Dosen</a>
-                <a href="../Login-Form-Mahasiswa/index.html">Mahasiswa</a>
+            <a href="/login/formLogin?role=dosen">Dosen</a>
+            <a href="/login/formLogin?role=mahasiswa">Mahasiswa</a>
             </div>
         </form>
     </div>
     )
 }
-
-export default Login

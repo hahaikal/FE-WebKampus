@@ -8,8 +8,8 @@ export default function Login () {
             </h1>
 
             <div className="option">
-            <a href="/login/formLogin?role=dosen">Dosen</a>
-            <a href="/login/formLogin?role=mahasiswa">Mahasiswa</a>
+            <a href="/login/dosen">Dosen</a>
+            <a href="/login/mahasiswa">Mahasiswa</a>
             </div>
         </form>
     </div>

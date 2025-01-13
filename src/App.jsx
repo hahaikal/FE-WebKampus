@@ -10,7 +10,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/login/formLogin" element={<FormLogin />} />
+        <Route path="/login/dosen" element={<FormLogin />} />
+        <Route path="/login/mahasiswa" element={<FormLogin />} />
       </Routes>
     </Router>
   );

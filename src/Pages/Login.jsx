@@ -1,6 +1,6 @@
 export default function Login () {
     return (
-    <div className="wrapper  d-flex justify-content-center align-items-center vh-100">
+    <div className="wrapper d-flex justify-content-center align-items-center vh-100">
         <form action="">
             <div className="icon"><i className='bx bxs-user' ></i></div>
             <h1>Login

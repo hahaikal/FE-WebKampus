@@ -1,36 +1,42 @@
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
-export default function loginHandler (placeholder) {
+export default function LoginHandler (placeholder) {
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-  
+
     const username = document.querySelector('input[type="text"]').value;
     const password = document.querySelector('input[type="password"]').value;
 
     if (placeholder === 'NIM') {
-      axios.post('http://localhost:3000/login/mahasiswa', {
-        NIM: username,
+      axios.post('http://localhost:3000/login', {
+        nim: username,
         password: password
       })
       .then((response) => {
-        console.log(response.data);
-        alert(response.data.metadata)
+        alert(response.data.message)
+        sessionStorage.setItem('userData', JSON.stringify(response.data.user));
+        navigate('/home', {state: response.data.user})
       })
       .catch((error) => {
-        alert(error.message);
+        console.error(error.response.data.message);
+        alert(error.response.data.message);
       });
     } else if (placeholder === 'NIDN') {
-      axios.post('http://localhost:3000/login/dosen', {
+      axios.post('http://localhost:3000/login', {
         nidn: username,
         password: password
       })
       .then((response) => {
-        console.log(response.data);
-        alert('berhasil login')
+        alert(response.data.message)
+        sessionStorage.setItem('userData', JSON.stringify(response.data.user));
+        navigate('/home', {state: response.data.user})
       })
       .catch((error) => {
-        console.error(error);
-        alert('gagal login')
+        console.error(error.message);
+        alert(error.message)
       });
     }
   };

@@ -4,6 +4,7 @@ import LandingPage from './Pages/LandingPage'
 import Login from './Pages/Login'
 import FormLogin from './Pages/FormLogin';
 import Register from './Pages/Register';
+import FormEdit from './components/FormEdit';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/login/mahasiswa" element={<FormLogin />} />
         <Route path="/register/mahasiswa" element={<Register />} />
         <Route path="/register/dosen" element={<Register />} />
+        <Route path="/home/profile" element={<FormEdit />} />
       </Routes>
     </Router>
   );

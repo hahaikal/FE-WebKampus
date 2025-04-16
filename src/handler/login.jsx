@@ -17,7 +17,6 @@ export default function LoginHandler (placeholder) {
       })
       .then((response) => {
         alert(response.data.message)
-        sessionStorage.setItem('userData', JSON.stringify(response.data.user));
         navigate('/home', {state: response.data.user})
       })
       .catch((error) => {
@@ -31,7 +30,6 @@ export default function LoginHandler (placeholder) {
       })
       .then((response) => {
         alert(response.data.message)
-        sessionStorage.setItem('userData', JSON.stringify(response.data.user));
         navigate('/home', {state: response.data.user})
       })
       .catch((error) => {

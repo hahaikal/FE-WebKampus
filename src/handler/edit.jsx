@@ -1,15 +1,16 @@
 const EditProfile = async (e, id, handleClose) => {  
     e.preventDefault();  
   
-    // const userData = JSON.parse(sessionStorage.getItem('userData'));  
-    const name = document.querySelector('#name').value;  
-    const email = document.querySelector('#email').value;  
-    const bio = document.querySelector('#bio').value;  
-    const telepon = document.querySelector('#telepon').value;  
-    const fakultas = document.querySelector('#fakultas').value;  
-    const prodi = document.querySelector('#prodi').value;  
+    const userData = JSON.parse(sessionStorage.getItem('userData'));  
+    const name = document.querySelector('#name').value === '' ? null : document.querySelector('#name').value;
+    const email = document.querySelector('#email').value === '' ? null : document.querySelector('#email').value; 
+    const bio = document.querySelector('#bio').value === '' ? null : document.querySelector('#bio').value;
+    const telepon = document.querySelector('#telepon').value === null ? null : document.querySelector('#telepon').value;
+    const fakultas = document.querySelector('#fakultas').value === '' ? null : document.querySelector('#fakultas').value;
+    const prodi = document.querySelector('#prodi').value === '' ? null : document.querySelector('#prodi').value; 
   
-    const data = { name, email, bio, telepon, fakultas, prodi };  
+    const data = { name, email, bio, telepon, fakultas, prodi }; 
+    console.log(data);
   
     try {  
         const response = await fetch(`http://localhost:3000/edit/${id}`, {  
@@ -19,23 +20,25 @@ const EditProfile = async (e, id, handleClose) => {
             },  
             body: JSON.stringify(data),  
         });  
+        console.log(response);
   
         if(!response.ok) {  
             const errorResult = await response.json();  
             return alert(errorResult.message);  
         }  
-  
+      
         const result = await response.json();  
-        // const updatedUserData = { ...userData };  
+        console.log(result)
+        const updatedUserData = { ...userData };  
         
-        // // Update only the modified fields
-        // Object.keys(data).forEach(key => {
-        //     if (data[key] !== userData[key]) {
-        //         updatedUserData[key] = data[key];
-        //     }
-        // });
+        // Update only the modified fields
+        Object.keys(data).forEach(key => {
+            if (data[key] !== userData[key]) {
+                updatedUserData[key] = data[key];
+            }
+        });
         
-        // sessionStorage.setItem('userData', JSON.stringify(updatedUserData));  
+        sessionStorage.setItem('userData', JSON.stringify(updatedUserData));  
         alert(result.message);  
         return handleClose();  
     } catch (error) {  
@@ -44,40 +47,3 @@ const EditProfile = async (e, id, handleClose) => {
 };
 
 export default EditProfile;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
